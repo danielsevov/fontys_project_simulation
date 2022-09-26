@@ -1,4 +1,4 @@
-# University project - Traffic Simulationm  
+# University project - Traffic Simulation 
 
 The structure is as follows:
 
