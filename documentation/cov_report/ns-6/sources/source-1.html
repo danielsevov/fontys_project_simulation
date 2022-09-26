@@ -1,0 +1,174 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > SceneManager</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">frontend</a>
+</div>
+
+<h1>Coverage Summary for Class: SceneManager (frontend)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">SceneManager</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package frontend;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import javafx.fxml.FXMLLoader;
+<i class="no-highlight">4</i>&nbsp;import javafx.scene.Parent;
+<i class="no-highlight">5</i>&nbsp;import javafx.scene.Scene;
+<i class="no-highlight">6</i>&nbsp;import javafx.scene.image.Image;
+<i class="no-highlight">7</i>&nbsp;import javafx.stage.Stage;
+<i class="no-highlight">8</i>&nbsp;import javafx.util.Callback;
+<i class="no-highlight">9</i>&nbsp;
+<i class="no-highlight">10</i>&nbsp;import java.io.IOException;
+<i class="no-highlight">11</i>&nbsp;import java.util.HashMap;
+<i class="no-highlight">12</i>&nbsp;import java.util.Map;
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;/**
+<i class="no-highlight">15</i>&nbsp; * Scene manager for all controllers.
+<i class="no-highlight">16</i>&nbsp; */
+<i class="no-highlight">17</i>&nbsp;public class SceneManager {
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;    private final Scene scene;
+<b class="nc"><i class="no-highlight">20</i>&nbsp;    private Stage stage = null;</b>
+<i class="no-highlight">21</i>&nbsp;    public final Callback&lt;Class&lt;?&gt;, Object&gt; controllerFactory;
+<b class="nc"><i class="no-highlight">22</i>&nbsp;    private final Map&lt;String, Parent&gt; views = new HashMap&lt;&gt;();</b>
+<i class="no-highlight">23</i>&nbsp;
+<b class="nc"><i class="no-highlight">24</i>&nbsp;    public SceneManager(Callback&lt;Class&lt;?&gt;, Object&gt; controllerFactory, String initialView) {</b>
+<b class="nc"><i class="no-highlight">25</i>&nbsp;        this.controllerFactory = controllerFactory;</b>
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        scene = new Scene(loadScene(initialView));</b>
+<i class="no-highlight">27</i>&nbsp;    }
+<i class="no-highlight">28</i>&nbsp;
+<i class="no-highlight">29</i>&nbsp;    /**
+<i class="no-highlight">30</i>&nbsp;     * Changes scenes by resetting the root of the current scene.
+<i class="no-highlight">31</i>&nbsp;     */
+<i class="no-highlight">32</i>&nbsp;    public final void changeScene(String view) {
+<b class="nc"><i class="no-highlight">33</i>&nbsp;        scene.setRoot(views.computeIfAbsent(view, this::loadScene));</b>
+<i class="no-highlight">34</i>&nbsp;    }
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;    /**
+<i class="no-highlight">37</i>&nbsp;     * Loads a fxml scene.
+<i class="no-highlight">38</i>&nbsp;     */
+<i class="no-highlight">39</i>&nbsp;    private Parent loadScene(String fxml) {
+<b class="nc"><i class="no-highlight">40</i>&nbsp;        FXMLLoader fxmlLoader = new FXMLLoader(Simulation.class.getResource(fxml + &quot;.fxml&quot;));</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;        fxmlLoader.setControllerFactory(controllerFactory);</b>
+<i class="no-highlight">42</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">43</i>&nbsp;            return fxmlLoader.load();</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        } catch (IOException ex) {</b>
+<b class="nc"><i class="no-highlight">45</i>&nbsp;            throw new RuntimeException(ex);</b>
+<i class="no-highlight">46</i>&nbsp;        }
+<i class="no-highlight">47</i>&nbsp;    }
+<i class="no-highlight">48</i>&nbsp;
+<i class="no-highlight">49</i>&nbsp;    /**
+<i class="no-highlight">50</i>&nbsp;     * Displays scene on a stage.
+<i class="no-highlight">51</i>&nbsp;     */
+<i class="no-highlight">52</i>&nbsp;    public void displayOn(Stage stage, int width, int height, String stageTitle) {
+<b class="nc"><i class="no-highlight">53</i>&nbsp;        this.stage = stage;</b>
+<b class="nc"><i class="no-highlight">54</i>&nbsp;        stage.setScene(scene);</b>
+<b class="nc"><i class="no-highlight">55</i>&nbsp;        stage.setWidth(width);</b>
+<b class="nc"><i class="no-highlight">56</i>&nbsp;        stage.setHeight(height);</b>
+<b class="nc"><i class="no-highlight">57</i>&nbsp;        stage.setTitle(stageTitle);</b>
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        stage.getIcons().add(new Image(getClass().getResource(&quot;icons/icon.png&quot;).toExternalForm()));</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;        stage.show();</b>
+<i class="no-highlight">60</i>&nbsp;    }
+<i class="no-highlight">61</i>&nbsp;
+<i class="no-highlight">62</i>&nbsp;    /**
+<i class="no-highlight">63</i>&nbsp;     * Closes stage.
+<i class="no-highlight">64</i>&nbsp;     */
+<i class="no-highlight">65</i>&nbsp;    public void closeStage() {
+<b class="nc"><i class="no-highlight">66</i>&nbsp;        stage.close();</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;        Runtime.getRuntime().exit(1);</b>
+<i class="no-highlight">68</i>&nbsp;    }
+<i class="no-highlight">69</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-12-03 11:59</div>
+</div>
+</body>
+</html>

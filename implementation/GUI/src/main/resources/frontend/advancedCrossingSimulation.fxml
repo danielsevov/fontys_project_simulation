@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="900.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.AdvancedCrossingSimulationController">
+    <padding>
+        <Insets bottom="-20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <VBox.margin>
+            <Insets bottom="30.0" />
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0" />
+        </padding>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="446.0" text="Advanced Crossing Simulation" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="23.0" />
+            </font>
+            <HBox.margin>
+                <Insets bottom="-50.0" left="50.0" />
+            </HBox.margin>
+        </Label>
+    </HBox>
+    <Line endX="180.89297485351562" startX="-450.0">
+        <VBox.margin>
+            <Insets top="-100.0" />
+        </VBox.margin>
+    </Line>
+   <Pane prefHeight="450.0" prefWidth="860.0">
+      <children>
+         <ImageView fitHeight="450.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@backgrounds/singleCrossingBackground.png" />
+            </image></ImageView>
+         <GridPane prefHeight="450.0" prefWidth="900.0">
+           <columnConstraints>
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="166.00001525878906" minWidth="10.0" prefWidth="164.2" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="126.0" minWidth="10.0" prefWidth="54.20001220703125" />
+               <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="124.20001220703125" minWidth="10.0" prefWidth="62.19998779296873" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="144.3999755859375" minWidth="10.0" prefWidth="57.00001220703126" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="186.39996337890625" minWidth="10.0" prefWidth="75.19997558593747" />
+               <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="151.20001220703125" minWidth="10.0" prefWidth="69.60000000000002" />
+               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="151.79999999999995" minWidth="10.0" prefWidth="56.799999999999955" />
+             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="161.59995117187498" minWidth="10.0" prefWidth="161.59995117187498" />
+             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="62.19998779296875" minHeight="1.6000122070312486" prefHeight="1.6000122070312486" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="90.19998779296874" minHeight="10.0" prefHeight="70.39998779296876" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="77.20001831054688" minHeight="10.0" prefHeight="49.200012207031236" valignment="BOTTOM" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="72.39998168945311" minHeight="10.0" prefHeight="65.99998779296874" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="69.19997558593752" minHeight="10.0" prefHeight="64.39998779296877" vgrow="SOMETIMES" />
+               <RowConstraints maxHeight="71.99997558593748" minHeight="10.0" prefHeight="46.80001220703127" valignment="TOP" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="87.00002441406252" minHeight="10.0" prefHeight="67.00002441406252" vgrow="SOMETIMES" />
+             <RowConstraints maxHeight="35.59995117187498" minHeight="8.399999999999977" prefHeight="8.399999999999977" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Circle fx:id="verticalCircle1" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+               <Circle fx:id="verticalCircle2" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+               <Circle fx:id="verticalCircle3" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+               <Circle fx:id="verticalCircle4" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+               <Circle fx:id="horizontalCircle4" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+               <Circle fx:id="horizontalCircle3" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+               <Circle fx:id="horizontalCircle2" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+               <Circle fx:id="horizontalCircle1" fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+               <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                  <children>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle1Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle1Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle1Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle1Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle1Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle1Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                  </children>
+               </VBox>
+               <VBox alignment="BOTTOM_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                  <children>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle2Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle2Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle2Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle2Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="horizontalRectangle2Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerHorizontalRectangle2Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                  </children>
+               </VBox>
+               <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                  <children>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle1Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle1Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle1Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle1Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle1Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle1Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                  </children>
+               </HBox>
+               <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                  <children>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle2Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle2Left" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle2Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle2Straight" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                     <Group>
+                        <children>
+                           <Rectangle fx:id="verticalRectangle2Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="22.0" stroke="BLACK" strokeType="INSIDE" width="22.0" />
+                           <Rectangle fx:id="innerVerticalRectangle2Right" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="20.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="20.0" />
+                        </children>
+                     </Group>
+                  </children>
+               </HBox>
+            </children>
+         </GridPane>
+      </children></Pane>
+   <GridPane prefHeight="38.0" prefWidth="702.0">
+     <columnConstraints>
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="210.20001220703125" minWidth="10.0" prefWidth="120.60002441406249" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="238.99997558593748" minWidth="10.0" prefWidth="157.60000000000002" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="311.20000000000005" minWidth="10.0" prefWidth="164.2" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="311.20000000000005" minWidth="10.0" prefWidth="306.6" />
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+           <Button mnemonicParsing="false" onAction="#startSimulation" prefHeight="27.0" prefWidth="100.0" text="Start Simulation" textFill="#009f00">
+               <padding>
+                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+           </Button>
+         <Button mnemonicParsing="false" onAction="#endSimulation" prefHeight="27.0" prefWidth="100.0" text="End Simulation" textFill="RED" GridPane.columnIndex="1">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="145.0" text="Back to Dashboard" GridPane.columnIndex="4">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         </Button>
+         <Label contentDisplay="RIGHT" prefWidth="239.0" text="Length (seconds):" GridPane.columnIndex="2">
+            <graphic>
+               <ComboBox fx:id="lengthBox" onAction="#changeLength" prefHeight="25.0" prefWidth="56.0" />
+            </graphic>
+         </Label>
+         <Label contentDisplay="RIGHT" prefWidth="239.0" text="Mode:" GridPane.columnIndex="3">
+            <graphic>
+               <ComboBox fx:id="modeBox" onAction="#changeMode" prefHeight="25.0" prefWidth="200.0" />
+            </graphic>
+         </Label>
+      </children>
+   </GridPane>
+   <Line endX="250.0" startX="-450.0">
+      <VBox.margin>
+         <Insets bottom="-50.0" />
+      </VBox.margin>
+   </Line>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <VBox.margin>
+         <Insets top="50.0" />
+      </VBox.margin>
+   </HBox>
+</VBox>

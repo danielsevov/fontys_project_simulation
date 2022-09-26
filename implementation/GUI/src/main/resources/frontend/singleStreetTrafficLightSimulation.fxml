@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="394.0" prefWidth="742.0" spacing="20.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.controllers.SingleStreetTrafficLightSimulationController">
+    <padding>
+        <Insets bottom="-20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <MenuBar maxWidth="933.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="933.0">
+        <VBox.margin>
+            <Insets left="-30.0" right="-20.0" top="-20.0" />
+        </VBox.margin>
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Close" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete" />
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About" />
+        </Menu>
+    </MenuBar>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <VBox.margin>
+            <Insets bottom="30.0" />
+        </VBox.margin>
+        <padding>
+            <Insets left="150.0" />
+        </padding>
+        <Label alignment="CENTER" prefHeight="40.0" prefWidth="455.0" text="Single Street Traffic Light Simulation" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="23.0" />
+            </font>
+            <HBox.margin>
+                <Insets bottom="-50.0" />
+            </HBox.margin>
+        </Label>
+    </HBox>
+    <Line endX="250.0" startX="-450.0">
+        <VBox.margin>
+            <Insets top="-100.0" />
+        </VBox.margin>
+    </Line>
+   <GridPane prefHeight="400.0" prefWidth="800.0">
+     <columnConstraints>
+         <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Pane prefHeight="400.0" prefWidth="400.0">
+            <children>
+               <ImageView fitHeight="400.0" fitWidth="422.0" layoutX="-22.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@trafficLights/singleLightTrafficLight.png" />
+                  </image>
+               </ImageView>
+               <Circle fx:id="lightCircle" fill="WHITE" layoutX="178.0" layoutY="72.0" radius="44.0" stroke="BLACK" strokeMiterLimit="30.0" strokeType="INSIDE" strokeWidth="3.0" />
+               <Circle fx:id="innerCircle" fill="WHITE" layoutX="178.0" layoutY="72.0" radius="27.0" stroke="BLACK" strokeMiterLimit="30.0" strokeType="INSIDE" strokeWidth="0.0" />
+            </children>
+            <GridPane.margin>
+               <Insets left="20.0" top="20.0" />
+            </GridPane.margin>
+         </Pane>
+         <GridPane GridPane.columnIndex="1">
+           <columnConstraints>
+             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+            <children>
+               <Label contentDisplay="BOTTOM" text="State duration in seconds" GridPane.rowIndex="3">
+                  <graphic>
+                     <ComboBox fx:id="lengthBox" onAction="#changeLength" prefWidth="150.0" />
+                  </graphic>
+               </Label>
+               <Label contentDisplay="BOTTOM" text="Shape of traffic light" GridPane.rowIndex="2">
+                  <graphic>
+                     <ComboBox fx:id="shapeBox" onAction="#changeShape" prefHeight="26.0" prefWidth="253.0" promptText="Choose shape" />
+                  </graphic>
+               </Label>
+               <Label contentDisplay="BOTTOM" text="Behaviour of traffic light" GridPane.rowIndex="1">
+                  <graphic>
+                     <ComboBox fx:id="behaviourBox" onAction="#changeBehaviour" prefHeight="26.0" prefWidth="255.0" promptText="Choose behaviour" />
+                  </graphic>
+               </Label>
+               <Label contentDisplay="RIGHT" text="Current state" GridPane.rowIndex="4">
+                  <graphic>
+                     <TextField fx:id="stateField" editable="false" promptText="No current state yet." />
+                  </graphic>
+               </Label>
+            </children>
+         </GridPane>
+      </children>
+   </GridPane>
+   <Line endX="250.0" startX="-450.0">
+      <VBox.margin>
+         <Insets bottom="-50.0" />
+      </VBox.margin>
+   </Line>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <Button mnemonicParsing="false" onAction="#startSimulation" prefHeight="30.0" prefWidth="145.0" text="Start Simulation">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <HBox.margin>
+               <Insets left="60.0" />
+            </HBox.margin>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#endSimulation" prefHeight="30.0" prefWidth="145.0" text="End Simulation">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <HBox.margin>
+               <Insets left="120.0" />
+            </HBox.margin>
+         </Button>
+         <Button mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="145.0" text="Back to Dashboard">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <HBox.margin>
+               <Insets left="121.0" />
+            </HBox.margin>
+         </Button>
+      </children>
+      <VBox.margin>
+         <Insets top="50.0" />
+      </VBox.margin>
+   </HBox>
+   <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0">
+      <VBox.margin>
+         <Insets top="-30.0" />
+      </VBox.margin>
+   </TextArea>
+</VBox>
